@@ -18,20 +18,16 @@ export default function App() {
             <Route
               exact
               path={process.env.PUBLIC_URL + "/"}
-              render={(props) => <Login />}
+              component={Login}
             />
-            <Route exact path="/home" render={(props) => <Home />} />
-            <Route exact path="/home/list" render={(props) => <List />} />
-            <Route exact path="/home/friends" render={(props) => <Friends />} />
-            <Route
-              exact
-              path="/home/friends/:id"
-              render={(props) => <UserProfile />}
-            />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/home/list" component={List} />
+            <Route exact path="/home/friends" component={Friends} />
+            <Route exact path="/home/friends/:id" component={UserProfile} />
             <Route
               exact
               path="/home/relation-check"
-              render={(props) => <RelationCheck />}
+              component={RelationCheck}
             />
           </Switch>
         </BrowserRouter>
