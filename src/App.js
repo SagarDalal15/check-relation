@@ -15,7 +15,11 @@ export default function App() {
       <CurrentUserContextProvider>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" render={(props) => <Login />} />
+            <Route
+              exact
+              path={process.env.PUBLIC_URL + "/"}
+              render={(props) => <Login />}
+            />
             <Route exact path="/home" render={(props) => <Home />} />
             <Route exact path="/home/list" render={(props) => <List />} />
             <Route exact path="/home/friends" render={(props) => <Friends />} />
