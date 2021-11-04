@@ -50,7 +50,7 @@ export default function Login() {
         </div>
         <Form onSubmit={submitHandler}>
           <Form.Label style={{ fontSize: "18px" }}>
-            Enter your Username
+            Enter Your Username
           </Form.Label>
           <Form.Control
             style={{ width: "300px" }}
