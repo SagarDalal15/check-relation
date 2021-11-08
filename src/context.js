@@ -1,19 +1,9 @@
 import React, { createContext, useState } from "react";
 
-export const friendsContext = createContext();
 export const currentUserContext = createContext();
 export const listContext = createContext();
 
-export function Friends({ children }) {
-  const [friends, setFriends] = useState([]);
-
-  return (
-    <friendsContext.Provider value={(friends, setFriends)}>
-      {children}
-    </friendsContext.Provider>
-  );
-}
-
+// list of all the people with their friends
 export const ListContextProvider = ({ children }) => {
   const [list, setList] = useState([
     {
@@ -28,9 +18,6 @@ export const ListContextProvider = ({ children }) => {
     { username: "bhaskar", name: "Bhaskar", friends: [] },
   ]);
 
-  console.log("This is list");
-  console.log(list);
-
   return (
     <listContext.Provider value={[list, setList]}>
       {children}
@@ -38,14 +25,13 @@ export const ListContextProvider = ({ children }) => {
   );
 };
 
+// current logged in user.
 export const CurrentUserContextProvider = ({ children }) => {
   const [loggedInUser, setLoggedInUser] = useState({
     username: "",
     name: "",
-    friends: ["sameer"],
+    friends: [],
   });
-  console.log("This is LoggedInUser");
-  console.log(loggedInUser);
 
   return (
     <currentUserContext.Provider value={[loggedInUser, setLoggedInUser]}>

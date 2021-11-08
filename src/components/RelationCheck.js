@@ -5,7 +5,6 @@ import { listContext } from "../context";
 export default function RelationCheck() {
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
-  const [tempState, setTempState] = useState([]);
   const [temp2State, setTemp2State] = useState([]);
   const [bool, setBool] = useState(false);
   const [errorMessage, setErrorMessage] = useState();
@@ -48,7 +47,6 @@ export default function RelationCheck() {
     temp2 = [];
     recursion(node1);
 
-    setTempState(temp);
     setTemp2State(temp2);
     if (temp.length === 0) {
       setErrorMessage("Couldn't find data");
@@ -57,7 +55,6 @@ export default function RelationCheck() {
     }
   };
 
-  console.log(tempState);
   console.log(temp2State);
 
   var len = temp2State.length;
