@@ -55,8 +55,6 @@ export default function RelationCheck() {
     }
   };
 
-  console.log(temp2State);
-
   var len = temp2State.length;
 
   return (
